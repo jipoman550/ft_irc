@@ -104,3 +104,43 @@
    git pull origin dev
    git branch -d feat/<본인이름>-<기능명>-#<이슈번호>
    ```
+
+---
+
+## 7. 코드 스타일 가이드 (Code Formatting Conventions)
+
+본 프로젝트는 코드 일관성 및 가독성을 위해 **올만 스타일(Allman Style)**, **카멜케이스(CamelCase) 명명 규칙**, **42 Return 괄호 컨벤션**을 따릅니다.
+
+### 1. 올만 스타일 (Allman Style / BSD Style)
+- 모든 제어문(`if`, `for`, `while`), 함수 정의, 클래스 정의 시 중괄호 `{}`를 독립된 다음 줄에 배치하고 제어문과 동일한 들여쓰기 위치에 맞춥니다.
+```cpp
+// [Good] 올만 스타일 (Allman Style)
+static bool parsePort(const std::string& str, int& port)
+{
+    if (str.empty())
+    {
+        return (false);
+    }
+    for (size_t i = 0; i < str.length(); ++i)
+    {
+        if (str[i] < '0' || str[i] > '9')
+        {
+            return (false);
+        }
+    }
+    return (true);
+}
+```
+
+### 2. 명명 규칙 (Naming Conventions - CamelCase)
+- **함수 및 메서드**: `lowerCamelCase`를 사용합니다. (예: `parsePort()`, `runServer()`, `handleCommand()`)
+- **클래스 및 구조체**: `UpperCamelCase` (PascalCase)를 사용합니다. (예: `Server`, `Client`, `Channel`)
+- **변수 및 멤버 변수**: `lowerCamelCase`를 사용합니다. (예: `clientFd`, `readBuffer`)
+
+### 3. 리턴 문 괄호 사용 (Return Parentheses)
+- `return` 문 사용 시 반환값을 소괄호 `()`로 감싸 명시합니다. (`return (0);`, `return (false);`)
+
+### 4. 상세 주석 작성
+- 함수 및 복잡한 정규식/알고리즘 로직 상단에는 Doxygen 스타일 주석(`/** ... */`) 또는 명확한 블록 주석으로 유효성 검사 순서 및 반환값을 설명합니다.
+
+
