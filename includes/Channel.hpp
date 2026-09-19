@@ -1,18 +1,22 @@
-#pragma once
+#ifndef CHANNEL_HPP
+#define CHANNEL_HPP
 
 #include <string>
 #include <vector>
 
-struct client; // 전방선언
+class Client;
 
-struct Channel
+class Channel 
 {
-    std::string name;
-    std::vector<client*> members;
-    std::vector<client*> operators;
-    std::string topic;
-    std::string key;
-    bool inviteOnly;
-    bool topicRestricted;
-    int limit;
+public:
+    std::string          name;
+    std::vector<Client*> members;
+    std::vector<Client*> operators;
+    std::string          topic;
+    std::string          key;
+    bool                 inviteOnly;
+    bool                 topicRestricted;
+    int                  limit;
 };
+
+#endif

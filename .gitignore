@@ -1,5 +1,6 @@
 *.o
 *.d
+obj/
 ircserv
 .DS_Store
 .vscode/
