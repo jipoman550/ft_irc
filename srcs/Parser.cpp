@@ -51,7 +51,7 @@ void normalizeCommand(std::string& input)
 	{
 		if (input[i] >= 'a' && input[i] <= 'z')
 		{
-			input[i] = toupper(input[i]);
+			input[i] = std::toupper(input[i]);
 		}
 	}
 }
