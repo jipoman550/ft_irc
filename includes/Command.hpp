@@ -8,6 +8,7 @@ struct Command
 {
     std::string              name;
     std::vector<std::string> params;
+    std::string              trailing;
 };
 
 #endif
