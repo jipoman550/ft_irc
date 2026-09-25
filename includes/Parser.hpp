@@ -16,4 +16,7 @@ void preprocessInput(std::string& input);
 // 명령어 이름을 대문자로 변환해 대소문자를 통일 합니다.
 void normalizeCommand(std::string& input);
 
+// buffer에서 "\r\n" 기준으로 완성된 IRC 메세지 한 줄을 꺼냅니다.
+bool getLineFromBuffer(std::string& buffer, std::string& line);
+
 #endif
