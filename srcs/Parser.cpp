@@ -71,12 +71,6 @@ bool getLineFromBuffer(std::string& buffer, std::string& line)
 	return (true);
 }
 
-/*
-	IRC 명령어 한 줄을 파싱 합니다.
-	첫 번째 토큰은 명령어 이름으로 저장하고,
-	나머지 토큰은 파라미터로 저장합니다.
-	':' 이후의 문자열은 하나의 trailing parameter로 처리합니다.
-*/ 
 Command commandParser(const std::string& line)
 {
 	Command result;
