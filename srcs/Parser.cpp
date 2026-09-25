@@ -56,6 +56,21 @@ void normalizeCommand(std::string& input)
 	}
 }
 
+bool getLineFromBuffer(std::string& buffer, std::string& line)
+{
+	size_t pos = buffer.find("\r\n");
+	
+	if (pos == std::string::npos)
+	{
+		return (false);
+	}
+
+	line = buffer.substr(0, pos);
+	buffer.erase(0, pos + 2);
+
+	return (true);
+}
+
 /*
 	IRC 명령어 한 줄을 파싱 합니다.
 	첫 번째 토큰은 명령어 이름으로 저장하고,
