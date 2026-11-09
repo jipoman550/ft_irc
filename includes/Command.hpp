@@ -4,11 +4,11 @@
 #include <string>
 #include <vector>
 
-struct Command 
+struct Command
 {
-    std::string              name;
-    std::vector<std::string> params;
-    std::string              trailing;
+	std::string              name;
+	std::vector<std::string> params;
+	std::string              trailing;
 };
 
 #endif
