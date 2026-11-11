@@ -8,12 +8,12 @@ SRC_DIR     = srcs
 OBJ_DIR     = obj
 INC_DIR     = includes
 
-# 소스 파일 목록
+# 소스 파일 목록 (Mandatory 전체)
 SRCS        = $(SRC_DIR)/main.cpp \
               $(SRC_DIR)/Server.cpp \
-              # $(SRC_DIR)/Client.cpp \
-              # $(SRC_DIR)/Channel.cpp \
-              # $(SRC_DIR)/Command.cpp
+              $(SRC_DIR)/Parser.cpp \
+              $(SRC_DIR)/Channel.cpp \
+              $(SRC_DIR)/Client.cpp
 
 OBJS        = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS        = $(OBJS:.o=.d)
@@ -46,7 +46,7 @@ fclean: clean
 
 re: fclean all
 
-# 헤더 변경 자동 감지 의존성 파일 인클루드
+# 헤더 변경 자동 감지 의존성 파일 인클루드 (-MMD -MP 로 생성된 .d 파일)
 -include $(DEPS)
 
 .PHONY: all clean fclean re
